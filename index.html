@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Limited Company vs Umbrella Calculator 2024/25 — Which Pays More?</title>
+<meta name="description" content="Find out whether a limited company or umbrella company leaves more money in your pocket. Enter your day rate and get a full side-by-side take-home comparison — free, instant, no signup.">
+<meta name="keywords" content="limited company vs umbrella calculator, umbrella vs ltd company take home pay, umbrella company calculator UK, limited company calculator 2024, contractor ltd vs umbrella, which is better ltd or umbrella">
+<meta property="og:title" content="Limited Company vs Umbrella Calculator 2024/25 — Which Pays More?">
+<meta property="og:description" content="Ltd company or umbrella? See exactly which puts more money in your pocket based on your day rate and working pattern.">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://yoursite.com/limited-company-vs-umbrella-calculator">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Limited Company vs Umbrella Calculator",
+  "description": "Compare take-home pay between a limited company and umbrella company based on your day rate. 2024/25 UK tax rates.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #f8f7f4;
+  --white: #ffffff;
+  --ink: #1c1c1e;
+  --ink2: #4a4a52;
+  --ink3: #9898a6;
+  --rule: #e8e8f0;
+  --ltd: #1a3a5c;
+  --ltd-light: #e8f0f8;
+  --ltd-mid: #2563a8;
+  --ltd-border: #bad0ea;
+  --umb: #2d4a1e;
+  --umb-light: #ecf5e8;
+  --umb-mid: #3a7d28;
+  --umb-border: #b8dca8;
+  --diff-bg: #1c1c1e;
+  --warn-bg: #fff9e6;
+  --warn: #6b4f00;
+}
+html { font-size: 16px; }
+body {
+  font-family: 'Karla', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.65;
+}
+
+/* ── Header ── */
+header {
+  background: var(--ink);
+  padding: 4rem 1.5rem 3.25rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.header-grid {
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg, transparent, transparent 39px, rgba(255,255,255,.03) 39px, rgba(255,255,255,.03) 40px),
+    repeating-linear-gradient(
+    90deg, transparent, transparent 39px, rgba(255,255,255,.03) 39px, rgba(255,255,255,.03) 40px);
+}
+.tax-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #fbbf24;
+  background: rgba(251,191,36,.1);
+  border: 1px solid rgba(251,191,36,.2);
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+header h1 {
+  position: relative;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.1;
+  max-width: 700px;
+  margin: 0 auto .9rem;
+  letter-spacing: -.02em;
+}
+header h1 em { font-style: italic; color: #fbbf24; }
+.header-sub {
+  position: relative;
+  font-size: 15px;
+  color: #80808e;
+  max-width: 500px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* ── Vs badge ── */
+.vs-strip {
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: .85rem 1.5rem;
+  border-bottom: 1px solid #2e2e38;
+}
+.vs-item {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.vs-item.ltd { color: #7eb8f5; }
+.vs-item.umb { color: #86efac; }
+.vs-divider {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #444450;
+  font-style: italic;
+}
+
+/* ── Layout ── */
+.container { max-width: 900px; margin: 0 auto; padding: 0 1.25rem; }
+main { padding: 2.5rem 0 4rem; }
+
+/* ── Input panel ── */
+.inputs-panel {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--rule);
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+.panel-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 1.25rem;
+}
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 640px) { .input-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 420px) { .input-grid { grid-template-columns: 1fr; } }
+
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label { font-size: 13px; font-weight: 500; color: var(--ink2); }
+.field-hint { font-size: 11px; color: var(--ink3); line-height: 1.4; }
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg);
+  transition: border-color .15s;
+}
+.input-wrap:focus-within { border-color: var(--ink); }
+.input-pre {
+  padding: 0 10px;
+  font-size: 14px;
+  color: var(--ink3);
+  font-weight: 500;
+  background: var(--bg);
+  border-right: 1px solid var(--rule);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.input-suf {
+  padding: 0 10px;
+  font-size: 12px;
+  color: var(--ink3);
+  background: var(--bg);
+  border-left: 1px solid var(--rule);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+input[type="number"] {
+  border: none;
+  background: transparent;
+  padding: 0 10px;
+  height: 40px;
+  font-family: 'Karla', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  width: 100%;
+  outline: none;
+}
+
+/* sliders */
+.slider-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 520px) { .slider-row { grid-template-columns: 1fr; } }
+
+.sfield { display: flex; flex-direction: column; gap: 6px; }
+.sfield-top { display: flex; justify-content: space-between; align-items: baseline; }
+.sfield-label { font-size: 13px; font-weight: 500; color: var(--ink2); }
+.sfield-val { font-size: 15px; font-weight: 600; color: var(--ink); }
+.sfield-hint { font-size: 11px; color: var(--ink3); }
+
+input[type="range"] {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 4px;
+  border-radius: 2px; background: var(--rule);
+  outline: none; cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px; height: 18px; border-radius: 50%;
+  background: var(--ink); border: 3px solid white;
+  box-shadow: 0 0 0 1px var(--rule);
+}
+
+/* ── Winner banner ── */
+.winner-banner {
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  background: var(--diff-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.winner-label {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: .3rem;
+}
+.winner-label.ltd { color: #7eb8f5; }
+.winner-label.umb { color: #86efac; }
+.winner-label.tie { color: #fbbf24; }
+
+.winner-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -.01em;
+}
+.winner-text.ltd { color: #7eb8f5; }
+.winner-text.umb { color: #86efac; }
+.winner-text.tie { color: #fbbf24; }
+
+.winner-sub { font-size: 13px; color: #606070; margin-top: .25rem; }
+.winner-big {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.03em;
+  flex-shrink: 0;
+}
+.winner-big.ltd { color: #7eb8f5; }
+.winner-big.umb { color: #86efac; }
+.winner-big.tie { color: #fbbf24; }
+
+/* ── Comparison columns ── */
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+@media (max-width: 560px) { .comparison { grid-template-columns: 1fr; } }
+
+.col {
+  border-radius: 16px;
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+.col.ltd { border-color: var(--ltd-border); }
+.col.umb { border-color: var(--umb-border); }
+
+.col-head { padding: 1.1rem 1.25rem 1rem; }
+.col.ltd .col-head { background: var(--ltd-light); }
+.col.umb .col-head { background: var(--umb-light); }
+
+.col-type {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: .3rem;
+}
+.col.ltd .col-type { color: var(--ltd-mid); }
+.col.umb .col-type { color: var(--umb-mid); }
+
+.col-takehome {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem; font-weight: 400;
+  line-height: 1; letter-spacing: -.02em;
+}
+.col.ltd .col-takehome { color: var(--ltd); }
+.col.umb .col-takehome { color: var(--umb); }
+
+.col-sub { font-size: 12px; margin-top: 3px; }
+.col.ltd .col-sub { color: #5a82b0; }
+.col.umb .col-sub { color: #5a9a48; }
+
+.col-body { background: white; }
+.col-row {
+  display: flex;
+  justify-content: space-between;
+  padding: .58rem 1.25rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: 13px;
+}
+.col-row:last-child { border-bottom: none; }
+.col-row .rl { color: var(--ink2); }
+.col-row .rr { font-weight: 500; color: var(--ink); }
+.col-row.neg .rr { color: #b54040; }
+.col-row.pos .rr { color: #2d7a20; }
+.col-row.subtotal { background: var(--bg); }
+.col-row.subtotal .rl { font-weight: 500; }
+.col.ltd .col-row.total .rr { color: var(--ltd); font-weight: 600; }
+.col.umb .col-row.total .rr { color: var(--umb); font-weight: 600; }
+.col-row.total { background: var(--bg); }
+.col-row.total .rl { font-weight: 600; }
+
+/* ── Key metrics ── */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 560px) {
+  .metrics { grid-template-columns: 1fr 1fr; }
+  .metrics .metric:last-child { grid-column: 1 / -1; }
+}
+.metric {
+  background: white;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.m-label {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink3); margin-bottom: .3rem;
+}
+.m-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .5rem;
+  margin-top: 4px;
+}
+.m-who { font-size: 11px; color: var(--ink3); }
+.m-who.ltd { color: var(--ltd-mid); font-weight: 500; }
+.m-who.umb { color: var(--umb-mid); font-weight: 500; }
+.m-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 400;
+  letter-spacing: -.01em; line-height: 1;
+  color: var(--ink);
+}
+
+/* ── Notice ── */
+.notice {
+  background: var(--warn-bg);
+  border: 1px solid #ffe299;
+  border-radius: 10px;
+  padding: .85rem 1.1rem;
+  font-size: 13px;
+  color: var(--warn);
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: .6rem;
+  line-height: 1.6;
+}
+
+/* ── Considerations ── */
+.consider {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 560px) { .consider { grid-template-columns: 1fr; } }
+
+.con-card {
+  border-radius: 14px;
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+.con-card.ltd { border-color: var(--ltd-border); }
+.con-card.umb { border-color: var(--umb-border); }
+
+.con-head {
+  padding: .85rem 1.1rem;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+}
+.con-card.ltd .con-head { background: var(--ltd-light); color: var(--ltd-mid); }
+.con-card.umb .con-head { background: var(--umb-light); color: var(--umb-mid); }
+
+.con-body { background: white; padding: .85rem 1.1rem; }
+.con-item {
+  display: flex;
+  gap: .6rem;
+  font-size: 13px;
+  color: var(--ink2);
+  padding: .3rem 0;
+  line-height: 1.5;
+}
+.con-item::before {
+  content: '→';
+  color: var(--ink3);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── FAQ ── */
+.faq { padding: 3rem 0; border-top: 1px solid var(--rule); }
+.faq-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 400;
+  margin-bottom: 2rem; letter-spacing: -.02em;
+}
+details { border-bottom: 1px solid var(--rule); padding: 1.1rem 0; }
+summary {
+  font-size: 15px; font-weight: 500;
+  cursor: pointer; list-style: none;
+  display: flex; justify-content: space-between;
+  align-items: center; color: var(--ink);
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { content: '+'; font-size: 20px; font-weight: 300; color: var(--ink3); flex-shrink: 0; margin-left: 1rem; }
+details[open] summary::after { content: '−'; }
+.faq-body { font-size: 14px; color: var(--ink2); padding-top: .85rem; line-height: 1.85; max-width: 660px; }
+.faq-body p + p { margin-top: .75rem; }
+
+/* ── Footer ── */
+footer {
+  background: var(--ink); color: #55555f;
+  text-align: center; padding: 2rem 1.5rem;
+  font-size: 13px; line-height: 1.8;
+}
+footer a { color: #7eb8f5; text-decoration: none; }
+footer strong { color: #888896; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-grid"></div>
+  <div class="tax-badge">2024/25 Tax Year</div>
+  <h1>Limited company or umbrella — <em>which pays more?</em></h1>
+  <p class="header-sub">Enter your day rate and get a complete side-by-side take-home comparison, including admin costs and hidden trade-offs.</p>
+</header>
+
+<div class="vs-strip">
+  <span class="vs-item ltd">Limited Company (Ltd)</span>
+  <span class="vs-divider">vs</span>
+  <span class="vs-item umb">Umbrella Company</span>
+</div>
+
+<main>
+<div class="container">
+
+  <!-- Inputs -->
+  <div class="inputs-panel">
+    <div class="panel-label">Your details</div>
+    <div class="input-grid">
+
+      <div class="field">
+        <label>Day rate</label>
+        <span class="field-hint">What you charge clients per day</span>
+        <div class="input-wrap">
+          <span class="input-pre">£</span>
+          <input type="number" id="dayrate" value="450" min="100" max="5000" step="25" oninput="calc()">
+          <span class="input-suf">/day</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Billable days / year</label>
+        <span class="field-hint">Realistic days you expect to bill</span>
+        <div class="input-wrap">
+          <input type="number" id="days" value="220" min="50" max="260" step="5" oninput="calc()">
+          <span class="input-suf">days</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Ltd business expenses</label>
+        <span class="field-hint">Accountant, software, equipment</span>
+        <div class="input-wrap">
+          <span class="input-pre">£</span>
+          <input type="number" id="expenses" value="4500" min="0" max="50000" step="250" oninput="calc()">
+        </div>
+      </div>
+
+      <div class="slider-row">
+        <div class="sfield">
+          <div class="sfield-top">
+            <span class="sfield-label">Umbrella margin / week</span>
+            <span class="sfield-val" id="margin-out">£20/wk</span>
+          </div>
+          <span class="sfield-hint">Reputable umbrellas typically charge £15–£25/week</span>
+          <input type="range" id="margin" min="10" max="50" value="20" step="1"
+            oninput="document.getElementById('margin-out').textContent='£'+this.value+'/wk';calc()">
+        </div>
+
+        <div class="sfield">
+          <div class="sfield-top">
+            <span class="sfield-label">Ltd salary drawn</span>
+            <span class="sfield-val" id="sal-out">£12,570</span>
+          </div>
+          <span class="sfield-hint">Usually set at personal allowance for tax efficiency</span>
+          <input type="range" id="salary" min="12570" max="50270" value="12570" step="500"
+            oninput="document.getElementById('sal-out').textContent='£'+parseInt(this.value).toLocaleString('en-GB');calc()">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Winner banner -->
+  <div class="winner-banner" id="winner-banner">
+    <div>
+      <div class="winner-label" id="w-label">Winner</div>
+      <div class="winner-text" id="w-text">—</div>
+      <div class="winner-sub" id="w-sub">—</div>
+    </div>
+    <div class="winner-big" id="w-big">—</div>
+  </div>
+
+  <!-- Side by side -->
+  <div class="comparison">
+
+    <div class="col ltd">
+      <div class="col-head">
+        <div class="col-type">Limited Company</div>
+        <div class="col-takehome" id="ltd-takehome">£0</div>
+        <div class="col-sub">estimated take-home per year</div>
+      </div>
+      <div class="col-body">
+        <div class="col-row"><span class="rl">Gross revenue</span><span class="rr" id="ltd-gross">£0</span></div>
+        <div class="col-row neg"><span class="rl">Business expenses</span><span class="rr" id="ltd-exp">−£0</span></div>
+        <div class="col-row neg"><span class="rl">Accountant fees (est.)</span><span class="rr" id="ltd-acct">−£0</span></div>
+        <div class="col-row neg"><span class="rl">Employer's NI on salary</span><span class="rr" id="ltd-erni">−£0</span></div>
+        <div class="col-row neg"><span class="rl">Corporation tax (19%)</span><span class="rr" id="ltd-ct">−£0</span></div>
+        <div class="col-row neg"><span class="rl">Income tax + employee NI</span><span class="rr" id="ltd-paye">−£0</span></div>
+        <div class="col-row neg"><span class="rl">Dividend tax</span><span class="rr" id="ltd-div">−£0</span></div>
+        <div class="col-row total"><span class="rl">Net take-home</span><span class="rr" id="ltd-net">£0</span></div>
+      </div>
+    </div>
+
+    <div class="col umb">
+      <div class="col-head">
+        <div class="col-type">Umbrella Company</div>
+        <div class="col-takehome" id="umb-takehome">£0</div>
+        <div class="col-sub">estimated take-home per year</div>
+      </div>
+      <div class="col-body">
+        <div class="col-row"><span class="rl">Gross contract value</span><span class="rr" id="umb-gross">£0</span></div>
+        <div class="col-row neg"><span class="rl">Umbrella margin</span><span class="rr" id="umb-margin">−£0</span></div>
+        <div class="col-row neg"><span class="rl">Employer's NI (13.8%)</span><span class="rr" id="umb-erni">−£0</span></div>
+        <div class="col-row neg"><span class="rl">Apprenticeship levy (0.5%)</span><span class="rr" id="umb-al">−£0</span></div>
+        <div class="col-row subtotal"><span class="rl">Gross pay (deemed salary)</span><span class="rr" id="umb-deemed">£0</span></div>
+        <div class="col-row neg"><span class="rl">Income tax (PAYE)</span><span class="rr" id="umb-it">−£0</span></div>
+        <div class="col-row neg"><span class="rl">Employee's NI</span><span class="rr" id="umb-eni">−£0</span></div>
+        <div class="col-row total"><span class="rl">Net take-home</span><span class="rr" id="umb-net">£0</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Key metrics -->
+  <div class="metrics">
+    <div class="metric">
+      <div class="m-label">Effective take-home rate</div>
+      <div class="m-row">
+        <span class="m-who ltd">Ltd Co</span>
+        <span class="m-val" id="m-ltd-rate">—%</span>
+      </div>
+      <div class="m-row">
+        <span class="m-who umb">Umbrella</span>
+        <span class="m-val" id="m-umb-rate">—%</span>
+      </div>
+    </div>
+    <div class="metric">
+      <div class="m-label">Monthly take-home</div>
+      <div class="m-row">
+        <span class="m-who ltd">Ltd Co</span>
+        <span class="m-val" id="m-ltd-mo">—</span>
+      </div>
+      <div class="m-row">
+        <span class="m-who umb">Umbrella</span>
+        <span class="m-val" id="m-umb-mo">—</span>
+      </div>
+    </div>
+    <div class="metric">
+      <div class="m-label">Annual difference</div>
+      <div class="m-row">
+        <span class="m-who" id="m-diff-who">Ltd vs Umb</span>
+        <span class="m-val" id="m-diff">—</span>
+      </div>
+      <div class="m-row" style="margin-top:2px">
+        <span class="m-who" style="font-size:11px;color:var(--ink3)" id="m-diff-note">per year</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="notice">
+    <span>⚠</span>
+    <span>These are estimates based on 2024/25 UK tax rates. The Ltd Co model assumes the optimal salary/dividend split and includes a £1,500/year accountant estimate. Individual circumstances vary. Always take professional advice before choosing your trading structure.</span>
+  </div>
+
+  <!-- Considerations -->
+  <div class="consider">
+    <div class="con-card ltd">
+      <div class="con-head">Limited company — consider if…</div>
+      <div class="con-body">
+        <div class="con-item">You earn over £300/day and contract regularly</div>
+        <div class="con-item">You're outside IR35 (or mostly outside)</div>
+        <div class="con-item">You want to retain profits in the company</div>
+        <div class="con-item">You're comfortable with annual admin and filing</div>
+        <div class="con-item">You want more control over your tax affairs</div>
+        <div class="con-item">You plan to employ others or take on subcontractors</div>
+      </div>
+    </div>
+    <div class="con-card umb">
+      <div class="con-head">Umbrella — consider if…</div>
+      <div class="con-body">
+        <div class="con-item">You're inside IR35 (the tax benefit disappears)</div>
+        <div class="con-item">You're new to contracting and want simplicity</div>
+        <div class="con-item">You have short or irregular contracts</div>
+        <div class="con-item">You want statutory employment rights (holiday pay, SSP)</div>
+        <div class="con-item">You prefer a single PAYE payslip each month</div>
+        <div class="con-item">You don't want to deal with Companies House or HMRC filings</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<!-- FAQ -->
+<section class="faq">
+<div class="container">
+  <h2 class="faq-title">Common questions</h2>
+
+  <details open>
+    <summary>What's the main tax difference between limited company and umbrella?</summary>
+    <div class="faq-body">
+      <p>With a limited company outside IR35, you take a small salary (usually set at the personal allowance) and extract the rest as dividends. Dividends are taxed at lower rates than income and don't attract National Insurance, which is where the tax advantage comes from. You also pay corporation tax at 19% on profits before distributing them, but the overall effective rate is still usually lower than PAYE.</p>
+      <p>With an umbrella, you're an employee of the umbrella company. Your entire contract value is subject to employer's NI (13.8%), then the remainder is treated as salary subject to income tax and employee's NI. There's no dividend option. For most day rates, this results in a meaningfully lower take-home than a well-run limited company outside IR35.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>At what day rate does a limited company stop being worth it?</summary>
+    <div class="faq-body">
+      <p>The commonly quoted threshold is around £150–£200/day, below which the admin overhead of running a limited company starts to erode the tax saving. You'll typically pay £800–£2,000/year for a contractor accountant, plus Companies House fees and your own time — if the tax saving is only a few hundred pounds, umbrella simplicity wins.</p>
+      <p>At higher day rates the calculation changes. At £300/day the Ltd advantage is meaningful. At £500/day it's substantial — often £5,000–£10,000 more per year in take-home — and the accountant fee becomes a rounding error. Use the calculator above to see your specific figures.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Does umbrella give you employment rights that Ltd doesn't?</summary>
+    <div class="faq-body">
+      <p>Yes — and it's one of the genuine advantages of umbrella that often gets overlooked. As an umbrella employee, you're entitled to statutory employment rights: Statutory Sick Pay (SSP), Statutory Maternity/Paternity Pay, auto-enrolment pension contributions, and holiday pay. As a limited company director, you have none of these statutory protections and must fund everything yourself.</p>
+      <p>In practice, many Ltd contractors simply build these costs into their rate and self-insure. But for someone returning from a career break, new to contracting, or with health concerns, the employment rights of umbrella aren't trivial.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>What does a contractor accountant actually do, and do I need one?</summary>
+    <div class="faq-body">
+      <p>A contractor accountant typically handles: setting up your limited company, registering for VAT and PAYE, processing your monthly payroll, filing quarterly VAT returns, preparing annual accounts, submitting your corporation tax return, and filing your personal self-assessment. They'll also advise on the most tax-efficient salary/dividend split each year.</p>
+      <p>You don't strictly need one — you can do all of this yourself or use accounting software like FreeAgent or Xero. But most contractors find the time cost isn't worth it, and a good accountant typically saves their fee many times over in legitimate tax efficiency. Expect to pay £75–£150/month for a specialist contractor accountant.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>What are the risks of umbrella companies I should know about?</summary>
+    <div class="faq-body">
+      <p>The main risk is disguised remuneration or "mini umbrella" schemes, which HMRC has aggressively targeted. These schemes promise unusually high take-home pay (often 85%+) by artificially structuring payments to avoid tax. Contractors who use them can be held liable for the unpaid tax — even if they didn't understand how the scheme worked. If an umbrella is promising take-home significantly above what this calculator shows, treat it as a red flag.</p>
+      <p>Stick to FCSA-accredited (Freelancer & Contractor Services Association) umbrella companies. They operate to a professional code of conduct and won't put you at tax risk. The margin you pay them is the price of that protection.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Can I switch between limited company and umbrella?</summary>
+    <div class="faq-body">
+      <p>Yes, and many contractors do — particularly when moving between inside and outside IR35 contracts. There's no legal barrier to closing a limited company (or simply making it dormant) and moving to umbrella, or vice versa. The main practical consideration is timing: dormant company filing obligations continue until you formally dissolve the company, which takes a few months.</p>
+      <p>Some accountants recommend keeping the limited company dormant rather than dissolving it, especially if you think you'll return to outside IR35 contracting within a couple of years — the setup cost and time to incorporate again can be avoided.</p>
+    </div>
+  </details>
+
+</div>
+</section>
+
+<footer>
+  <p>Based on 2024/25 UK tax rates. Estimates only — individual circumstances vary significantly.<br>
+  <strong>Always take professional advice before choosing your trading structure.</strong><br>
+  Also useful: <a href="/ir35-calculator">IR35 Take-Home Calculator</a> &nbsp;·&nbsp; <a href="/freelance-day-rate-calculator">UK Freelance Rate Calculator</a></p>
+</footer>
+
+<script>
+function fmt(n) {
+  return '£' + Math.round(Math.abs(n)).toLocaleString('en-GB');
+}
+function pct(n) { return n.toFixed(1) + '%'; }
+
+function calcIT(income) {
+  var pa = 12570, br = 50270, hr = 125140;
+  if (income <= pa) return 0;
+  var tax = 0, taxable = income - pa;
+  tax += Math.min(taxable, br - pa) * 0.20;
+  if (income > br) tax += Math.min(income - br, hr - br) * 0.40;
+  if (income > hr) tax += (income - hr) * 0.45;
+  return tax;
+}
+function calcEmpNI(income) {
+  var lo = 12570, hi = 50270;
+  if (income <= lo) return 0;
+  var ni = Math.min(income, hi) - lo;
+  ni *= 0.08;
+  if (income > hi) ni += (income - hi) * 0.02;
+  return ni;
+}
+function calcDivTax(divs, salIncome) {
+  var pa = 12570, br = 50270, hr = 125140, allow = 500;
+  var taxable = Math.max(divs - allow, 0);
+  var used = Math.max(salIncome - pa, 0);
+  var brRoom = Math.max(br - pa - used, 0);
+  var tax = 0;
+  var inBR = Math.min(taxable, brRoom);
+  tax += inBR * 0.0875;
+  if (taxable > brRoom) {
+    var inHR = Math.min(taxable - brRoom, hr - br);
+    tax += inHR * 0.3375;
+    if (taxable - brRoom > inHR) tax += (taxable - brRoom - inHR) * 0.3938;
+  }
+  return tax;
+}
+
+function calc() {
+  var dr   = parseFloat(document.getElementById('dayrate').value)  || 0;
+  var days = parseFloat(document.getElementById('days').value)     || 220;
+  var exp  = parseFloat(document.getElementById('expenses').value) || 0;
+  var marg = parseFloat(document.getElementById('margin').value)   || 20;
+  var sal  = parseFloat(document.getElementById('salary').value)   || 12570;
+
+  var gross = dr * days;
+  var acct  = 1500; // estimated accountant cost included in ltd
+
+  /* ── LIMITED COMPANY ── */
+  var erNIonSal   = Math.max(sal - 9100, 0) * 0.138;
+  var taxProfit   = Math.max(gross - exp - acct - sal - erNIonSal, 0);
+  var ct          = taxProfit * 0.19;
+  var divs        = taxProfit - ct;
+  var salIT       = calcIT(sal);
+  var salEmpNI    = calcEmpNI(sal);
+  var divTax      = calcDivTax(divs, sal);
+  var ltdNet      = sal + divs - salIT - salEmpNI - divTax;
+  var ltdEff      = ltdNet / gross * 100;
+
+  /* ── UMBRELLA ── */
+  var umbMarginAnn = marg * 52;
+  var erNI        = (gross - umbMarginAnn) * 0.138;
+  var al          = (gross - umbMarginAnn) * 0.005;
+  var deemed      = gross - umbMarginAnn - erNI - al;
+  var umbIT       = calcIT(deemed);
+  var umbEmpNI    = calcEmpNI(deemed);
+  var umbNet      = deemed - umbIT - umbEmpNI;
+  var umbEff      = umbNet / gross * 100;
+
+  var diff    = ltdNet - umbNet;
+  var winner  = diff > 200 ? 'ltd' : diff < -200 ? 'umb' : 'tie';
+
+  /* ── DOM updates ── */
+  // Ltd column
+  set('ltd-gross',    fmt(gross));
+  set('ltd-exp',      '−' + fmt(exp));
+  set('ltd-acct',     '−' + fmt(acct));
+  set('ltd-erni',     '−' + fmt(erNIonSal));
+  set('ltd-ct',       '−' + fmt(ct));
+  set('ltd-paye',     '−' + fmt(salIT + salEmpNI));
+  set('ltd-div',      '−' + fmt(divTax));
+  set('ltd-net',      fmt(ltdNet));
+  set('ltd-takehome', fmt(ltdNet));
+
+  // Umbrella column
+  set('umb-gross',    fmt(gross));
+  set('umb-margin',   '−' + fmt(umbMarginAnn));
+  set('umb-erni',     '−' + fmt(erNI));
+  set('umb-al',       '−' + fmt(al));
+  set('umb-deemed',   fmt(deemed));
+  set('umb-it',       '−' + fmt(umbIT));
+  set('umb-eni',      '−' + fmt(umbEmpNI));
+  set('umb-net',      fmt(umbNet));
+  set('umb-takehome', fmt(umbNet));
+
+  // Metrics
+  set('m-ltd-rate', pct(ltdEff));
+  set('m-umb-rate', pct(umbEff));
+  set('m-ltd-mo',   fmt(ltdNet / 12));
+  set('m-umb-mo',   fmt(umbNet / 12));
+  set('m-diff',     fmt(Math.abs(diff)));
+  set('m-diff-who', diff >= 0 ? 'Ltd advantage' : 'Umbrella advantage');
+
+  // Winner banner
+  var wLabel = document.getElementById('w-label');
+  var wText  = document.getElementById('w-text');
+  var wSub   = document.getElementById('w-sub');
+  var wBig   = document.getElementById('w-big');
+
+  wLabel.className = 'winner-label ' + winner;
+  wText.className  = 'winner-text '  + winner;
+  wBig.className   = 'winner-big '   + winner;
+
+  if (winner === 'ltd') {
+    wLabel.textContent = 'Limited Company wins';
+    wText.textContent  = 'You keep ' + fmt(diff) + ' more per year through Ltd';
+    wSub.textContent   = 'Effective rate: ' + pct(ltdEff) + ' (Ltd) vs ' + pct(umbEff) + ' (Umbrella)';
+    wBig.textContent   = '+' + fmt(diff);
+  } else if (winner === 'umb') {
+    wLabel.textContent = 'Umbrella wins';
+    wText.textContent  = 'Umbrella pays ' + fmt(Math.abs(diff)) + ' more at these figures';
+    wSub.textContent   = 'Check your expenses — Ltd admin costs may be outweighing the tax benefit';
+    wBig.textContent   = '+' + fmt(Math.abs(diff));
+  } else {
+    wLabel.textContent = 'Too close to call';
+    wText.textContent  = 'The difference is under £200/year — other factors should decide';
+    wSub.textContent   = 'Consider simplicity, IR35 risk, and employment rights';
+    wBig.textContent   = '≈';
+  }
+}
+
+function set(id, val) {
+  document.getElementById(id).textContent = val;
+}
+
+calc();
+</script>
+</body>
+</html>
