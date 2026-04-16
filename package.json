@@ -1,0 +1,14 @@
+{
+  "name": "limited-vs-umbrella",
+  "version": "1.0.0",
+  "description": "Umbrella company take-home pay calculator",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Static HTML project - no build required'",
+    "lint": "echo 'No linting configured for static HTML'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.1.1"
+  },
+  "private": true
+}
